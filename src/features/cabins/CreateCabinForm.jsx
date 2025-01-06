@@ -45,6 +45,7 @@ function CreateCabinForm() {
         <Input
           type="number"
           id="maxCapacity"
+          disabled={isPending}
           {...register("maxCapacity", {
             required: "This field is required",
             min: {
@@ -59,6 +60,7 @@ function CreateCabinForm() {
         <Input
           type="number"
           id="regularPrice"
+          disabled={isPending}
           {...register("regularPrice", {
             required: "This field is required",
             min: {
@@ -73,11 +75,12 @@ function CreateCabinForm() {
         <Input
           type="number"
           id="discount"
+          disabled={isPending}
           defaultValue={0}
           {...register("discount", {
             required: "This field is required",
             validate: (value) =>
-              value <= getValues().regularPrice ||
+              value <= +getValues().regularPrice ||
               "Discount should be less than regular price",
           })}
         />
@@ -90,6 +93,7 @@ function CreateCabinForm() {
         <Textarea
           type="number"
           id="description"
+          disabled={isPending}
           defaultValue=""
           {...register("description", { required: "This field is required" })}
         />
@@ -100,7 +104,6 @@ function CreateCabinForm() {
       </FormRow>
 
       <FormRow>
-        {/* type is an HTML attribute! */}
         <Button variation="secondary" type="reset">
           Cancel
         </Button>

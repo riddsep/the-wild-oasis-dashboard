@@ -88,6 +88,5 @@ Table.Header = Header;
 Table.Body = Body;
 Table.Row = Row;
 Table.Footer = Footer;
-console.log();
 
 export default Table;

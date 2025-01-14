@@ -111,7 +111,7 @@ function CabinRow({ cabin }) {
           </Modal.Window>
         </Modal>
       </div>
-    </Tabl>
+    </Table.Row>
   );
 }
 
